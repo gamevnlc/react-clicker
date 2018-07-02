@@ -1,14 +1,24 @@
 import React from 'react'
-import logo from '../logo.svg';
+import PropTypes from 'prop-types'
 
 const Header = (props) => (
     <div className="App">
         <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={props.logo} className="App-logo" alt="logo" />
             <h1 className="App-title">{props.title}</h1>
-            <small className="App-info"> A basic React app that allows one to increase, decrease, or reset a counter</small>
+            <small className="App-info">{props.info}</small>
         </header>
     </div>
 )
+
+Header.defaultProps = {
+    title: 'Title',
+    info: 'Info'
+}
+
+Header.propTypes = {
+    title: PropTypes.string,
+    info: PropTypes.str
+}
 
 export default Header;
