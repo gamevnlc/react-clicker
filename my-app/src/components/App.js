@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import Header from './Header'
 import logo from '../logo.svg';
+import Clicker from './Clicker'
 
 class App extends Component {
     constructor() {
         super()
         this.state = {
-            title: 'Welcome to React. Clicker App',
+            title: 'Clicker App',
             logo: logo,
             info: ' A basic React app that allows one to increase, decrease, or reset a counter'
         }
@@ -15,8 +16,9 @@ class App extends Component {
     
     render() {
         return (
-            <div>
+            <div className="App">
                 <Header title={this.state.title} logo={this.state.logo} info={this.state.info}/>
+                <Clicker />
             </div>
         );
     }
